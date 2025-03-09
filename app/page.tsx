@@ -5,7 +5,7 @@ export default function Home() {
         <div className="text-4xl w-full flex justify-center">
           <h1 className="text-white">Cooking Something</h1>
           </div>
-        <p className="pr-5 flex w-full justify-center md:justify-end"><a style={{opacity:0.5}} href="https://github.com/baltej223">@baltej223</a></p>
+        <p className="pr-5 flex w-full justify-center md:justify-end"><a style={{opacity:0.5}} href="./github">@baltej223</a></p>
       </main>
     </div>
   );
