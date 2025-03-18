@@ -1,7 +1,7 @@
 export function Content({children, className="", style}){
     return (
     <>
-    <div className={"flex pl-10 flex-wrap w-full justify-center md:justify-start items-center md:items-start md:pl-50 md:pr-20 pt-10 text-xl " + className } style={style}>
+    <div className={"flex flex-wrap w-full justify-center md:justify-start items-center md:items-start md:pl-50 md:pr-20 pt-10 text-xl " + className } style={style}>
         {children}
     </div>
     </>
