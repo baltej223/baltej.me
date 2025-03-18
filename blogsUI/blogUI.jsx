@@ -1,3 +1,8 @@
+"use client";
+import { useRef, useEffect } from 'react';
+import "highlight.js/styles/night-owl.css";
+import hljs from 'highlight.js';
+
 export function Content({children, className="", style}){
     return (
     <>
@@ -151,4 +156,77 @@ export function Image({ src, alt, href = undefined, width = "auto", height = "au
             )}
         </>
     );
+}
+
+export function Code({className, style, children, lang="js"}){
+    let code = children.split("\n");
+
+    // function removeItemAll(arr, value) {
+    //     var i = 0;
+    //     while (i < arr.length) {
+    //       if (arr[i] === value) {
+    //         arr.splice(i, 1);
+    //       } else {
+    //         ++i;
+    //       }
+    //     }
+    //     return arr;
+    //   }
+    //   code = removeItemAll(code, "")
+    //   code = removeItemAll(code,"                ");
+    console.log(code);
+
+    const HighlightCode = ({ line, lang = "javascript" }) => {
+        const codeRef = useRef(null);
+      
+        useEffect(() => {
+          if (codeRef.current) {
+            hljs.highlightElement(codeRef.current);
+          }
+        }, [line, lang]);
+      
+        return (
+          <pre>
+            <code ref={codeRef}>
+              {line.trim()}
+            </code>
+          </pre>
+        );
+      };
+
+    return (
+        <>
+        <div className="flex flex-col w-[70%] scrollable pt-5 pb-5">
+            <div className="bg-[#011627] w-full opacity-75 border border-gray-600 rounded">
+                <div className="pl-10 pt-3 pb-3 pr-10 bg-[#424242] opacity-70">
+                    <Text className="text-white monospace opacity-[2]">
+                        {lang}
+                    </Text>
+                </div>
+                <hr className="text-zinc-800"/>
+
+                <div className="/*code*/ pt-5 pb-5 pl-10">
+                    <div className="monospace flex flex-col text-sm">
+                        {/* {children} */}
+                        {code.map((line, index)=>{
+                            return (
+                            <div className="flex flex-row" key={index}>
+                                {/* counter */}
+                                <div className="pr-5 text-white">
+                                    {index+1} 
+                                </div>
+                                {/* line */}
+                                <div className="monospace pl-0 flex flex-col gap-y-5">
+                                    <HighlightCode line={line} lang={lang}/>
+                                </div>
+                            </div>
+                            )
+                        })
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        </>
+    )
 }

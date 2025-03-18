@@ -19,30 +19,6 @@ export default function Home() {
             Baltej
           </BlogAuthor>
       </BlogCard>
-
-      <BlogCard src="https://cdn.pixabay.com/photo/2024/05/26/10/15/bird-8788491_1280.jpg" alt='some' href="./blog/junior-devs-cant-code">
-          <BlogCardTitle minsread="2-mins">
-            This is the heading
-          </BlogCardTitle>
-          <BlogCardDesc>
-          Creating a bizzare AI robot from zero
-          </BlogCardDesc>
-          <BlogAuthor>
-            Baltej
-          </BlogAuthor>
-      </BlogCard>
-
-      <BlogCard src="https://cdn.pixabay.com/photo/2024/05/26/10/15/bird-8788491_1280.jpg" alt='some' href="./blog/junior-devs-cant-code">
-          <BlogCardTitle minsread="2-mins">
-            This is the heading
-          </BlogCardTitle>
-          <BlogCardDesc>
-          Creating a bizzare AI robot from zero
-          </BlogCardDesc>
-          <BlogAuthor>
-            Baltej
-          </BlogAuthor>
-      </BlogCard>
     </Content>
     </>
   );

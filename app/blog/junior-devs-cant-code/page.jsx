@@ -1,4 +1,4 @@
-import {Content, Section} from "@/blogsUI/blogUI"
+import {Code, Content, Section} from "@/blogsUI/blogUI"
 import Navbar from "@/app/blog/navbar/navbar";
 import { Heading, Text, Image } from "@/blogsUI/blogUI";
 export default function JuniorDevs(){
@@ -17,6 +17,12 @@ export default function JuniorDevs(){
             <Section>
                 This works
             </Section>
+
+            <Code lang="Javascript">
+                {`document.getElementById("t");
+                If I had to copy it
+                `}
+            </Code>
         </Content>
     </>
     );

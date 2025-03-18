@@ -70,3 +70,11 @@ a{
 .cooking{
   font-family: monospace !important;
 }
+
+.monospace{
+  font-family: monospace !important;
+}
+
+code{
+  padding: 0 !important;
+}
