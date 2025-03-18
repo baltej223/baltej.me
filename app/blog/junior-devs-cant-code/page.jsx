@@ -5,7 +5,7 @@ export default function JuniorDevs(){
     return (
     <>
     <Navbar/>
-        <Content>
+        <Content className="pl-3 pr-3">
             <Heading type="1" variations={["bold"]}>
                 Junior Devs can't code without AI
             </Heading>
