@@ -13,13 +13,13 @@ export default function Navbar(){
                 <a href="/">Home</a>
             </div>
             <div>
-                <a href="./aboutme">About Me</a>
+                <a href="/aboutme">About Me</a>
             </div>
             <div>
-                <a href="./github">Github</a>
+                <a href="/github">Github</a>
             </div>
             <div>
-                <a href="./blogs">More Blogs</a>
+                <a href="/blog">More Blogs</a>
             </div>
             <div>
                 <a href="https://github.com/baltej223#connect-with-me">
