@@ -6,7 +6,7 @@ import hljs from 'highlight.js';
 export function Content({children, className="", style}){
     return (
     <>
-    <div className={"flex flex-wrap w-full justify-center md:justify-start items-center md:items-start md:pl-50 md:pr-20 pt-10 text-xl " + className } style={style}>
+    <div className={"mer flex flex-wrap w-full justify-center md:justify-start items-center md:items-start md:pl-50 md:pr-20 pt-10 text-xl " + className } style={style}>
         {children}
     </div>
     </>
@@ -24,7 +24,7 @@ export function Content({children, className="", style}){
 //     return <p className={className+" "+appliedClasses} style={styles}>{children}</p>;
 // }
 
-export function Text({ size = "lg", variations = [], children, styles, className}) {
+export function Text({ size = "md", variations = [], children, styles, className}) {
     const validSizes = ["xs", "sm", "md", "lg", "xl"];
 
     if (!validSizes.includes(size)) {
@@ -47,10 +47,10 @@ export function Text({ size = "lg", variations = [], children, styles, className
         .filter(Boolean)
         .join(" ");
 
-    return <p className={className+" "+appliedClasses} style={styles}>{children}</p>;
+    return <p className={className+" "+appliedClasses+" mer"} style={styles}>{children}</p>;
 }
 
-export function Heading({ type, variations = [], children, style}) {
+export function Heading({ type, variations = [], children, style, className}) {
     const validTypes = [1, 2, 3, 4, 5, 6];
 
     if (!validTypes.includes(Number(type))) {
@@ -76,7 +76,7 @@ export function Heading({ type, variations = [], children, style}) {
 
     const Tag = `h${type}`;
 
-    return <Tag className={appliedClasses} style={style}>{children}</Tag>;
+    return <Tag className={appliedClasses+" "+className+" mer"} style={style}>{children}</Tag>;
 }
 
 
@@ -88,7 +88,7 @@ export function BlogCard({src,alt, children, href, className}){
         <div className={`max-w-[450px] pb-5 md:pb-0 md:h-[450px] border border-zinc-300 pointer ${className}`} onClick={()=>{
             window.location.href = href;
         }}>
-            <div className="image w-full h-2/">
+            <div className="image w-full flex justify-center">
                 <img src={src} alt={alt}/>
             </div>
             <div className="flex flex-col gap-x-3">
@@ -157,45 +157,28 @@ export function Image({ src, alt, href = undefined, width = "auto", height = "au
         </>
     );
 }
-
-export function Code({className, style, children, lang="js"}){
+export function Code({ className, style, children, lang = "js" }) {
     let code = children.split("\n");
-
-    // function removeItemAll(arr, value) {
-    //     var i = 0;
-    //     while (i < arr.length) {
-    //       if (arr[i] === value) {
-    //         arr.splice(i, 1);
-    //       } else {
-    //         ++i;
-    //       }
-    //     }
-    //     return arr;
-    //   }
-    //   code = removeItemAll(code, "")
-    //   code = removeItemAll(code,"                ");
-    console.log(code);
 
     const HighlightCode = ({ line, lang = "javascript" }) => {
         const codeRef = useRef(null);
-      
+
         useEffect(() => {
-          if (codeRef.current) {
-            hljs.highlightElement(codeRef.current);
-          }
+            if (codeRef.current) {
+                hljs.highlightElement(codeRef.current);
+            }
         }, [line, lang]);
-      
+
         return (
-          <pre>
-            <code ref={codeRef}>
-              {line.trim()}
-            </code>
-          </pre>
+            <pre className="overflow-x-auto w-full">
+                <code ref={codeRef} className="whitespace-pre">
+                    {line.trim()}
+                </code>
+            </pre>
         );
-      };
+    };
 
     return (
-        <>
         <div className="flex flex-col w-[70%] scrollable pt-5 pb-5">
             <div className="bg-[#011627] w-full opacity-75 border border-gray-600 rounded">
                 <div className="pl-10 pt-3 pb-3 pr-10 bg-[#424242] opacity-70">
@@ -203,30 +186,26 @@ export function Code({className, style, children, lang="js"}){
                         {lang}
                     </Text>
                 </div>
-                <hr className="text-zinc-800"/>
+                <hr className="text-zinc-800" />
 
-                <div className="/*code*/ pt-5 pb-5 pl-10">
-                    <div className="monospace flex flex-col text-sm">
-                        {/* {children} */}
-                        {code.map((line, index)=>{
-                            return (
+                {/* Scrollable Code Block */}
+                <div className="pt-5 pb-5 pl-10 overflow-x-auto w-full">
+                    <div className="monospace flex flex-col text-sm w-full">
+                        {code.map((line, index) => (
                             <div className="flex flex-row" key={index}>
-                                {/* counter */}
-                                <div className="pr-5 text-white">
-                                    {index+1} 
+                                {/* Line Number */}
+                                <div className="pr-5 text-white monospace">
+                                    {index + 1}
                                 </div>
-                                {/* line */}
-                                <div className="monospace pl-0 flex flex-col gap-y-5">
-                                    <HighlightCode line={line} lang={lang}/>
+                                {/* Code Line */}
+                                <div className="monospace pl-0 flex flex-col gap-y-5 overflow-x-auto">
+                                    <HighlightCode line={line} lang={lang} />
                                 </div>
                             </div>
-                            )
-                        })
-                        }
+                        ))}
                     </div>
                 </div>
             </div>
         </div>
-        </>
-    )
+    );
 }

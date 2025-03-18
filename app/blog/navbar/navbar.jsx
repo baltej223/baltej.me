@@ -3,7 +3,7 @@ import ThemeToggle from "../ThemeToggle/ThemeToggle";
 export default function Navbar(){
     return (
     <>
-    <div className="pt-10 pb-10 flex flex-row items-center sticky top-0 left-0 justify-center md:justify-start /*After this goes classes for glassmorphism*/ light:bg-[rgba(255, 255, 255, 0.6)]" style={{backdropFilter:"blur( 10.5px )", opacity:""}}>
+    <div className="z-[100] pt-10 pb-10 flex flex-row items-center sticky top-0 left-0 justify-center md:justify-start /*After this goes classes for glassmorphism*/ light:bg-[rgba(255, 255, 255, 0.6)]" style={{backdropFilter:"blur( 10.5px )", opacity:""}}>
                                                                                                                                                                     {/* dark:bg-[rgba(0,0,0,0.35)] */}
         <div className="pl-0  md:pl-20  text-3xl md:w-1/2 block" style={{fontFamily:"logo-bold"}}>
             baltej.me
@@ -19,7 +19,7 @@ export default function Navbar(){
                 <a href="/github">Github</a>
             </div>
             <div>
-                <a href="/blog">More Blogs</a>
+                <a href="/blog">Blogs</a>
             </div>
             <div>
                 <a href="https://github.com/baltej223#connect-with-me">

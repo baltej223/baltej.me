@@ -59,7 +59,11 @@ body {
   font-family: logo;
 } */
 
-h1, h2, h3, h4, h5, h6, span, p, div {
+/* h1, h2, h3, h4, h5, h6, span, p, div {
+  font-family: Merriweather;
+} */
+
+.mer{
   font-family: Merriweather;
 }
 
