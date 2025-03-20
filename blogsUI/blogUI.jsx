@@ -198,7 +198,7 @@ export function Code({ className, style, children, lang = "js" }) {
                                     {index + 1}
                                 </div>
                                 {/* Code Line */}
-                                <div className="monospace pl-0 flex flex-col gap-y-5 overflow-x-auto">
+                                <div className="monospace pl-0 flex flex-col gap-y-5">
                                     <HighlightCode line={line} lang={lang} />
                                 </div>
                             </div>
