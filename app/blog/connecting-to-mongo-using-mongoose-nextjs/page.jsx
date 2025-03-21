@@ -11,7 +11,7 @@ export default function MongoDB(){
                 Connecting to MongoDB using mongoose in NextJS serverless
             </Heading>
             <Text className="pt-5" size="xl" variations={["italic"]}>
-                How can you connect to MongoDB using mongoose.js in Next JS, in serverless and How is it diffrent from Express.js
+                How can you connect to MongoDB using mongoose.js in NextJS serverless, and How does it differ from connecting in Express.js!
             </Text>
             <div className="flex w-full justify-center">
                 <Image src="https://avatars.githubusercontent.com/u/7552965?s=200&v=4" alt="none" width="300px" className="pt-10" desc="https://avatars.githubusercontent.com/u/7552965?s=200&v=4"/>
@@ -34,7 +34,7 @@ export default function MongoDB(){
                     npm install mongoose --save
             </Code>
             <Heading type="3">
-                Connecting To DB
+                Connecting To DB in express.js
             </Heading>
             <Code lang="Javascript">
                 {`/* This code should be enough to connect to mongoDB */
@@ -49,7 +49,7 @@ export default function MongoDB(){
             <Text>
             OR the way I preffer is 
             </Text>
-            <Code lang="JS">
+            <Code lang="JS" whitespace={"                "}>
                 {`import mogoose from "mongoose";
                 mongoose.connect("mongodb://127.0.0.1:27017/test").
                 then(()=>{
@@ -74,7 +74,7 @@ export default function MongoDB(){
             <Text>
                 Treat it as a thumb rule, never to use mongoose.connect alone, Let me explane
             </Text>
-            <Code lang="js">
+            <Code lang="js" whitespace="                ">
                 {`import mongoose from "mongoose";
                 mongoose.connect("connectionURI");`}
             </Code>
@@ -87,8 +87,123 @@ export default function MongoDB(){
             For a more deep dive, checkout docs of <a href="https://mongoosejs.com/docs/">mongoose</a>
             </Text> */}
             <Text>
-                This was basically How to connect to mongoDB using mongoose.
+                This was basics of connecting to MongoDB using mongoose.
             </Text>
+            <Section>
+                <Text size="lg" className="pl-10">
+                    But If you try to connect using the above way in <b>NEXTJS</b> then It wont work!!
+                </Text>
+            </Section>
+            <Text className="pl-10">
+                    Lets understand Why.
+                </Text>
+            <Heading type="3">
+                Connecting to MongoDB in NextJS
+            </Heading>
+            <Text>
+                First make sure that mongoose is installed, if not that install it by 
+                "<i>npm intall mongoose</i>"
+            </Text>
+            <Code lang="Javascript" whitespace="                    ">
+                
+                    {`import mongoose from "mongoose";
+                    const MONGOURI = "mongoDB://connectingURI:27017/"
+
+                    let cached = global.mongoose; 
+
+                    if (!cached) {
+                        cached = global.mongoose = { conn: null, promise: null };
+                    }
+                    
+                    export default async function connectDB(){
+                        cached.promise = mongoose.connect(MONGODB_URI, {
+                            useNewUrlParser: true,
+                            useUnifiedTopology: true,
+                        }).then((mongoose) => mongoose);
+
+                        cached.conn = await cached.promise;
+                        return cached.conn;
+                    }`}                    
+            </Code>
+            
+            <Text>
+                If you see clearly, We have cached mongoose connection, caching is very much required cause
+                NextJS is serverless, means that, the function execute on demand, 
+                means that the server is not always running and only runs whenever any request is received.
+                A new instance of function is created whenever a request is received
+            </Text>
+            <Text size="lg">
+            If connection is not cached then each request creates a new MongoDB connection, leading to connection overflow and performance issues.
+            </Text>
+            <Text>
+                Here if database is cached then connectDB will return the cached connection otherwise will try to establish a new connection and will return it.
+            </Text>
+            
+            <Text>
+                This above code can be pasted in database.js and then can be imported in your NextJS application like
+            </Text>
+            <Code>
+                {
+                    `
+                    // app/api/route.jsx
+
+                    import connectDB from "@/database.js"
+
+                    export default function POST(){
+                    connectDB(); // should be used inside of request handler function
+                    .
+                    . 
+
+                    `
+                }
+            </Code>
+            <Heading type="4" variations={["italic"]}>
+                Why to use connectDB inside of handler function?
+            </Heading>
+            <Text>
+                If connectDB is called outside of handler function then it will run every time the API file is imported, even if the request is not made.
+                This can lead to multiple connections being created unnecessarily.
+            </Text>
+            <Text>
+                Calling connectDB() inside the function ensures the connection is only established when a request is received.
+            </Text>
+            <Heading type="2">
+                How It Differs from Express.js
+            </Heading>
+            <Heading type="3">Connection Persistence</Heading>
+
+            <Text>NextJS is, Serverless. So function run per request, so connections need caching.</Text>
+            <Text>Express runs as a long-lived server, keeping connections persistent.</Text>
+
+            <Heading type="4">Where to Connect?</Heading>
+            <Text>
+            In Next.js, connections should be established inside API routes using a cached function.
+            This prevents multiple new connections per request.
+            </Text>
+            <Text>
+            In Express, the database connection is typically established once at server startup 
+            and reused for all incoming requests.
+            </Text>
+
+            <Heading type="4">Performance</Heading>
+            <Text>
+            In Next.js, frequent API function invocations may lead to excessive database 
+            connections if caching is not used properly.
+            </Text>
+            <Text>
+            In Express, a single persistent connection is maintained, reducing overhead and improving performance.
+            </Text>
+
+            <Heading type="4">Lifecycle</Heading>
+            <Text>
+            Next.js API routes are ephemeral, meaning a new function instance may be created 
+            for every request, requiring efficient connection handling.
+            </Text>
+            <Text>
+            Express runs continuously, keeping database connections alive throughout the 
+            application's lifecycle without requiring reconnections.
+            </Text>
+
         </Content>
     </>
     );

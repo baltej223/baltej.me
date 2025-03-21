@@ -157,8 +157,26 @@ export function Image({ src, alt, href = undefined, width = "auto", height = "au
         </>
     );
 }
-export function Code({ className, style, children, lang = "js" }) {
+export function Code({ className, style, children, lang = "Javascript", whitespace="                "}) {
+    // It should also detect the mode [statistical] of the whitepaces
     let code = children.split("\n");
+
+    if (whitespace==undefined){
+        let numberOfWhiteSpaces=[];
+        code.forEach((line, index)=>{
+            numberOfWhiteSpaces[index] = line.search(/\S/);
+        });
+        function mode(arr) {
+            const freq = arr.reduce((acc, num) => (acc[num] = (acc[num] || 0) + 1, acc), {});
+            const maxFreq = Math.max(...Object.values(freq));
+            return Object.keys(freq).filter(key => freq[key] === maxFreq).map(Number);
+        }
+
+        let mode_of_whiteSpaces = mode(numberOfWhiteSpaces);
+        //genrating mode_of_whitespaces Number whitespaces
+        whitespace = " ".repeat(mode_of_whiteSpaces) ;
+        console.log("for children %s, whitespace is %s", children ,whitespace.length);
+    }
 
     const HighlightCode = ({ line, lang = "javascript" }) => {
         const codeRef = useRef(null);
@@ -172,14 +190,14 @@ export function Code({ className, style, children, lang = "js" }) {
         return (
             <pre className="overflow-x-auto w-full">
                 <code ref={codeRef} className="whitespace-pre">
-                    {line.trim()}
+                    {whitespace?line.replace(whitespace, ""):line}
                 </code>
             </pre>
         );
     };
 
     return (
-        <div className="flex flex-col w-[70%] scrollable pt-5 pb-5">
+        <div className={`flex flex-col w-[90%] md:w-[70%] scrollable pt-5 pb-3 ${className?className:""}`} style={style?style:{}}>
             <div className="bg-[#011627] w-full opacity-75 border border-gray-600 rounded">
                 <div className="pl-10 pt-3 pb-3 pr-10 bg-[#424242] opacity-70">
                     <Text className="text-white monospace opacity-[2]">
@@ -189,7 +207,7 @@ export function Code({ className, style, children, lang = "js" }) {
                 <hr className="text-zinc-800" />
 
                 {/* Scrollable Code Block */}
-                <div className="pt-5 pb-5 pl-10 overflow-x-auto w-full">
+                <div className="pt-5 pb-5 pl-5 overflow-x-auto w-full">
                     <div className="monospace flex flex-col text-sm w-full">
                         {code.map((line, index) => (
                             <div className="flex flex-row" key={index}>
@@ -198,7 +216,7 @@ export function Code({ className, style, children, lang = "js" }) {
                                     {index + 1}
                                 </div>
                                 {/* Code Line */}
-                                <div className="monospace pl-0 flex flex-col gap-y-5">
+                                <div className="monospace pl-0 pr-5 flex flex-col gap-y-5">
                                     <HighlightCode line={line} lang={lang} />
                                 </div>
                             </div>
