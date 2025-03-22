@@ -1,5 +1,6 @@
 import { Content, Heading, Text, Section, Image } from "@/blogsUI/blogUI"
 import Navbar from "@/app/blog/navbar/navbar"
+import Footer from "../blog/footer/footer"
 export default function Home(){
     return(
         <>
@@ -45,6 +46,7 @@ export default function Home(){
                 </div>
             </div>
         </Content>
+        <Footer/>   
         </>
     )
 }

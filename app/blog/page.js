@@ -2,6 +2,8 @@
 import { Content } from "@/blogsUI/blogUI";
 import Navbar from "./navbar/navbar"
 import { BlogCard, BlogCardDesc, BlogCardTitle, BlogAuthor } from "@/blogsUI/blogUI";
+import Footer from "@/app/blog/footer/footer";
+
 export default function Home() {
   return (
     <>
@@ -32,6 +34,7 @@ export default function Home() {
           </BlogAuthor>
       </BlogCard>
     </Content>
+    <Footer/>
     </>
   );
 }

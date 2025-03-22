@@ -35,7 +35,7 @@ export default function Footer(){
 
                             {/* Twitter */}
                             <a
-                                href="https://twitter.com/baltej21"
+                                href="https://twitter.com/Baltej_223"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="hover:text-blue-400 transition duration-300 transform hover:scale-110 transition duration-300"
@@ -55,7 +55,7 @@ export default function Footer(){
 
                             {/* Stack Overflow */}
                             <a
-                                href="https://stackoverflow.com/users/baltej21"
+                                href="https://stackoverflow.com/users/18618367/baltej-singh"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="hover:text-orange-500 transition duration-300 transform hover:scale-110 transition duration-300"
