@@ -22,7 +22,7 @@ export default function ThemeToggle() {
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
 
-    // Update background & foreground
+    // Update background & foreground using CSS variables
     document.documentElement.style.setProperty("--background", newTheme === "dark" ? "#0a0a0a" : "#ffffff");
     document.documentElement.style.setProperty("--foreground", newTheme === "dark" ? "#ededed" : "#171717");
 
@@ -31,6 +31,13 @@ export default function ThemeToggle() {
       "--background-muted",
       newTheme === "dark" ? "hsl(0, 0%, 15%)" : "hsl(0, 0%, 90%)"
     );
+
+    // Apply the dark class to the root element
+    if (newTheme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
   };
 
   return (

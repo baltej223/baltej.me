@@ -1,12 +1,13 @@
 import {Code, Content, Section} from "@/blogsUI/blogUI"
 import Navbar from "@/app/blog/navbar/navbar";
 import { Heading, Text, Image } from "@/blogsUI/blogUI";
+import Footer from "@/app/blog/footer/footer";
 
 export default function MongoDB(){
     return (
     <>
     <Navbar/>
-        <Content className="pl-3 pr-3 flex flex-col gap-y-3">
+        <Content className="pl-3 pr-3 flex flex-col gap-y-3 justify-center items-center md:items-start pt-10">
             <Heading type="1" variations={["bold"]}>
                 Connecting to MongoDB using mongoose in NextJS serverless
             </Heading>
@@ -205,6 +206,7 @@ export default function MongoDB(){
             </Text>
 
         </Content>
+        <Footer/>
     </>
     );
 } 
