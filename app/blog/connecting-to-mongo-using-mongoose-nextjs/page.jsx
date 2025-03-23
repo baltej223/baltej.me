@@ -136,6 +136,9 @@ export default function MongoDB(){
                 means that the server is not always running and only runs whenever any request is received.
                 A new instance of function is created whenever a request is received
             </Text>
+            <Text>
+                Here if database is cached then connectDB will return the cached connection otherwise will try to establish a new connection and will return it.
+            </Text>
             <Text size="lg">
             If the connection is not cached, then each request creates a new MongoDB connection, leading to connection overflow and performance issues.
 
@@ -148,10 +151,6 @@ export default function MongoDB(){
                 Its never really recommended to close connection in NextJS, due to its serverless nature. Its always recommended to cache the connection.
                 I felt it to be important for you to know, How to close connections, Its not usefull if taken from NextJS prespective
                 but can be pretty much usefull if you are using ExpressJS. Its better to gracefully close connection at the time of server shutdown.
-            </Text>
-
-            <Text>
-                Here if database is cached then connectDB will return the cached connection otherwise will try to establish a new connection and will return it.
             </Text>
             
             <Text>
