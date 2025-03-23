@@ -17,6 +17,11 @@ export default function MongoDB(){
             <div className="flex w-full justify-center">
                 <Image src="https://avatars.githubusercontent.com/u/7552965?s=200&v=4" alt="none" width="300px" className="pt-10" desc="https://avatars.githubusercontent.com/u/7552965?s=200&v=4"/>
             </div>
+            <Text>
+                Its absolutely necessary to know basics of Mongoose before starting. 
+                If you are just starting from this article, then Mongo and Mongoose, then I will not strongly recommend this article, But I have written it in a beginner friendly way. So you can try.
+                Also I have covered basics of mongoose.js in this article, and will recommend to checkout <a href="https://mongoosejs.com/docs/guide.html" target="_blank" className="underline">documentation</a> once. 
+            </Text>
             <Heading type="3" className="pt-5">About Mongoose</Heading>
             <Text size="md">
                 Mongoose is a popular Object Data Modeling (ODM) library for MongoDB. 
@@ -39,7 +44,8 @@ export default function MongoDB(){
             </Heading>
             <Code lang="Javascript">
                 {`/* This code should be enough to connect to mongoDB */
-                const mongoose = require('mongoose');
+                import mongoose from "mongoose"
+
                 main().catch(err => console.log(err));
                 async function main() {
                 await mongoose.connect('mongodb://127.0.0.1:27017/test');
@@ -50,8 +56,8 @@ export default function MongoDB(){
             <Text>
             OR the way I preffer is 
             </Text>
-            <Code lang="JS" whitespace={"                "}>
-                {`import mogoose from "mongoose";
+            <Code lang="Javascript" whitespace={"                "}>
+                {`import mongoose from "mongoose";
                 mongoose.connect("mongodb://127.0.0.1:27017/test").
                 then(()=>{
                     console.log("Connection Success")
@@ -62,7 +68,7 @@ export default function MongoDB(){
                 });`}
             </Code>
 
-            <Code lang="js">
+            <Code lang="Javascript">
                 {`import mongoose from "mongoose";
                 mongoose.connect() // Its the main function which does the job
                 // in the parameter the this function comes the connection URI
@@ -75,7 +81,7 @@ export default function MongoDB(){
             <Text>
                 Treat it as a thumb rule, never to use mongoose.connect alone, Let me explane
             </Text>
-            <Code lang="js" whitespace="                ">
+            <Code lang="Javascript" whitespace="                ">
                 {`import mongoose from "mongoose";
                 mongoose.connect("connectionURI");`}
             </Code>
@@ -87,17 +93,14 @@ export default function MongoDB(){
             {/* <Text size="md">
             For a more deep dive, checkout docs of <a href="https://mongoosejs.com/docs/">mongoose</a>
             </Text> */}
-            <Text>
-                This was basics of connecting to MongoDB using mongoose.
-            </Text>
-            <Section>
+             <Section>
                 <Text size="lg" className="pl-10">
                     But If you try to connect using the above way in <b>NEXTJS</b> then It wont work!!
                 </Text>
             </Section>
-            <Text className="pl-10">
-                    Lets understand Why.
-                </Text>
+            <Text>
+                This was pretty much basics of connecting to MongoDB using mongoose in ExpressJS. Its alot same in NextJS, but has some diffrences. Let us see what are those.
+            </Text>
             <Heading type="3">
                 Connecting to MongoDB in NextJS
             </Heading>
@@ -134,8 +137,19 @@ export default function MongoDB(){
                 A new instance of function is created whenever a request is received
             </Text>
             <Text size="lg">
-            If connection is not cached then each request creates a new MongoDB connection, leading to connection overflow and performance issues.
+            If the connection is not cached, then each request creates a new MongoDB connection, leading to connection overflow and performance issues.
+
+            In such a case, connections should be terminated manually, which can be done as follows:
             </Text>
+            <Code>
+                await mongoose.connection.close();
+            </Code>
+            <Text>
+                Its never really recommended to close connection in NextJS, due to its serverless nature. Its always recommended to cache the connection.
+                I felt it to be important for you to know, How to close connections, Its not usefull if taken from NextJS prespective
+                but can be pretty much usefull if you are using ExpressJS. Its better to gracefully close connection at the time of server shutdown.
+            </Text>
+
             <Text>
                 Here if database is cached then connectDB will return the cached connection otherwise will try to establish a new connection and will return it.
             </Text>

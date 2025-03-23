@@ -202,7 +202,7 @@ export function Code({ className, style, children, lang = "Javascript", whitespa
         <div className={`flex flex-col w-[90%] md:w-[70%] scrollable pt-5 pb-3 ${className?className:""}`} style={style?style:{}}>
             <div className="bg-[#011627] w-full opacity-75 border border-gray-600 rounded">
                 <div className="flex flex-row pl-10 pt-3 pb-3 pr-10 bg-[#424242] opacity-70">
-                    <Text className="text-white monospace opacity-[2] w-[99%]">
+                    <Text className="text-white monospace opacity-[2] w-[99%] select-none">
                         {lang}
                     </Text>
                     <div className='flex items-center justify-center border-1 border-gray-300 w-6 h-6 rounded'>
@@ -231,7 +231,7 @@ export function Code({ className, style, children, lang = "Javascript", whitespa
                         {code.map((line, index) => (
                             <div className="flex flex-row" key={index}>
                                 {/* Line Number */}
-                                <div className="pr-5 text-white monospace">
+                                <div className="pr-5 text-white monospace select-none">
                                     {index + 1}
                                 </div>
                                 {/* Code Line */}
