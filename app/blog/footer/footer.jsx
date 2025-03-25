@@ -72,6 +72,25 @@ export default function Footer(){
                             >
                                 <FaCode size={24} />
                             </a>
+{/* YouTube */}
+                            <a
+                                href="https://www.youtube.com/@baltejsingh21"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:text-red-500 transition duration-300 transform hover:scale-110 transition duration-300"
+                            >
+                                <FaYoutube size={24} />
+                            </a>
+
+                            {/* GitHub */}
+                            <a
+                                href="https://github.com/baltej223"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:text-gray-800 transition duration-300 transform hover:scale-110 transition duration-300"
+                            >
+                                <FaGithub size={24} />
+                            </a>
                         </div>
                     </div>
             </Content>
