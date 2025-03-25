@@ -91,3 +91,9 @@ code{
   height:  calc(100svh - (2 * (var(--spacing) * 10)) - 3rem);
   ;
 }
+
+/* @layer base {
+  * {
+      @apply transition-all duration-300;
+  }
+} */
