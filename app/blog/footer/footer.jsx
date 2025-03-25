@@ -1,6 +1,6 @@
 import { Content, Text } from "@/blogsUI/blogUI";
 import { Divide } from "lucide-react";
-import { FaInstagram, FaTwitter, FaLinkedin, FaStackOverflow, FaCode } from "react-icons/fa";
+import { FaInstagram, FaTwitter, FaLinkedin, FaStackOverflow, FaCode, FaYoutube, FaGithub  } from "react-icons/fa";
 
 export default function Footer(){
     return(
