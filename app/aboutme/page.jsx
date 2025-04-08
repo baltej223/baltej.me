@@ -165,7 +165,8 @@ function Marquee_local(){
       }
     return(
         <>
-            <div className="w-full pt-3 pb-2">
+            <div className="w-full pt-3 pb-2"
+            >
             <Marquee autoFill={true} className="gap-x-30">
                 {Object.entries(skills).map(([name, { image_url, website_url }]) => (
                     <Icon key={name} image_url={image_url} website_url={website_url} name={name} />

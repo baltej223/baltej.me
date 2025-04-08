@@ -1,4 +1,4 @@
-import {Code, Content, Section} from "@/blogsUI/blogUI"
+import {Code, Content, Section, _Date} from "@/blogsUI/blogUI"
 import Navbar from "@/app/blog/navbar/navbar";
 import { Heading, Text, Image } from "@/blogsUI/blogUI";
 import Footer from "@/app/blog/footer/footer";
@@ -11,7 +11,8 @@ export default function MongoDB(){
             <Heading type="1" variations={["bold"]}>
                 Connecting to MongoDB using mongoose in NextJS serverless
             </Heading>
-            <Text className="pt-5" size="xl" variations={["italic"]}>
+            <_Date date='March 19 2025'/>
+            <Text className="pt-2" size="xl" variations={["italic"]}>
                 How can you connect to MongoDB using mongoose.js in NextJS serverless, and How does it differ from connecting in Express.js!
             </Text>
             <div className="flex w-full justify-center">
