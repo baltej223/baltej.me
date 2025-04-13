@@ -25,8 +25,8 @@ export default function MongoDB(){
             </Text>
             <Heading type="3" className="pt-5">About Mongoose</Heading>
             <Text size="md">
-                Mongoose is a popular Object Data Modeling (ODM) library for MongoDB. 
-                You must have prior knowledge of mongoose before starting, If you are new to mongoose then then the absoluete basics of mongoose can be found down. 
+                Mongoose is a popular ODM (Object Data Modeling) library that acts as an Object Document Mapper.
+                If you are pretty new to mongoose and you don't have much of knowledge of it, then in this article you can find absoluete required basics of it. 
             </Text>
             <Text variations={["italic", "bold"]}>
                 Make sure that Mongo and Node are already installed in your device.
