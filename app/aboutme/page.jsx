@@ -9,8 +9,8 @@ export default function Home(){
         <>
         <Navbar/>
         <Content className="flex-col gap-y-10">
-            <div className="flex flex-row">
-                <div className="flex flex-col gap-y-10 w-2/3">
+            <div className="flex md:flex-row flex-col-reverse flex-col width:[40%]">
+                <div className="flex flex-col gap-y-10 md:w-2/3 w-[3/4] pl-[10%] pr-[10%] md:p-0 pt-10 md:pt-0">
                     <Heading type="1">
                         Hi, I am Baltej Singh.
                     </Heading>
@@ -44,8 +44,8 @@ export default function Home(){
                         </ul>
                     </div>
                 </div>
-                <div className="flex justify-center items-center hidden md:block">
-                    <Image src="https://avatars.githubusercontent.com/u/73211864?v=4" className="rounded-4xl"/>
+                <div className="flex justify-center items-center block">
+                    <Image src="https://avatars.githubusercontent.com/u/73211864?v=4" className="rounded-4xl ml-[10%] mr-[10%] md:m-0"/>
                 </div>
             </div>
             <Marquee_local/>
