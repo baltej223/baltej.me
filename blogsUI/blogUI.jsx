@@ -7,7 +7,7 @@ import { Copy, Check } from 'lucide-react';
 export function Content({ children, className = "", style }) {
     return (
         <>
-            <div className={"mer flex flex-wrap w-full  md:justify-start  md:pl-50 md:pr-20  text-xl " + className} style={style}>
+            <div className={"mer flex flex-wrap w-full  md:justify-start  md:pl-65 md:pr-40  text-xl " + className} style={style}>
                 {children}
             </div>
         </>
