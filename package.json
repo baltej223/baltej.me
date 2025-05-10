@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "node ./scripts/post-build.mjs && next build ",
+    "build": "next build ",
+    "gen-changelog":"node ./scripts/post-build.mjs && echo 'If this command do not work then cd to root and rerun it.'", 
     "start": "next start",
     "lint": "next lint"
   },

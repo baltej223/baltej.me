@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 
-fs.readFile('../CHANGELOG.md', 'utf8', (err, data) => {
+fs.readFile('./CHANGELOG.md', 'utf8', (err, data) => {
     if (err) {
         throw new Error('Error reading file: ' + err);
     }
@@ -19,7 +19,7 @@ fs.readFile('../CHANGELOG.md', 'utf8', (err, data) => {
     </html>
     `;
 
-    fs.writeFile('../public/changelog.md', html, 'utf8', (writeErr) => {
+    fs.writeFile('./public/changelog.md', html, 'utf8', (writeErr) => {
         if (writeErr) {
             throw new Error('Error writing file: ' + writeErr);
         }
