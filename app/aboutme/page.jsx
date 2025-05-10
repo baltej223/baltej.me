@@ -9,8 +9,8 @@ export default function Home(){
         <>
         <Navbar/>
         <Content className="flex-col gap-y-10">
-            <div className="flex md:flex-row flex-col-reverse flex-col width:[40%]">
-                <div className="flex flex-col gap-y-10 md:w-2/3 w-[3/4] pl-[10%] pr-[10%] md:p-0 pt-10 md:pt-0">
+            <div className="flex lg:flex-row flex-col-reverse flex-col width:[40%]">
+                <div className="flex flex-col gap-y-10 lg:w-2/3 w-[3/4] pl-[10%] pr-[10%] lg:p-0 pt-10 lg:pt-0">
                     <Heading type="1">
                         Hi, I am Baltej Singh.
                     </Heading>

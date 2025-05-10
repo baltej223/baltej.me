@@ -53,8 +53,8 @@ END
 ```
 
 - Fixed Navbar, now fixed to the right of the navarea. Added right padding of it.
-- The previous breakpoint was set as ```md``` in React function compontent, "Content", Now changed to ```lg```.
-- Wrote ```post-build.js``` for creating html changelog, which can be accessed at ./changelog and changed package.json according to it.
+- The previous breakpoint was set as md in React function compontent, "Content", Now changed to lg.
+- Wrote post-build.js for creating html changelog, which can be accessed at ./changelog.
 
 # ON 06-May-25
 
@@ -64,4 +64,3 @@ Changed right padding of React functional component "Content" from 40 and 65.
 # ON 03-04-25
 
 Changed left and right padding of React functional component "Content" from 50 and 20 to 65 and 40.
-
