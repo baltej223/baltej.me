@@ -15,18 +15,18 @@ export default function MongoDB() {
         <_Date date="May 16 2025" />
         <div className="w-full flex flex-col lg:flex-row gap-x-10">
           <div className="lg:w-1/2">
-          <Heading type="3" variations={["bold"]}>
-          1. No consistent DSA practice from Day 1
-        </Heading>
-        <Text size="lg">
-          Students who delay starting Data Structures & Algorithms until the pre-final year often find themselves overwhelmed later. As Chayan Sinha (Thapar ’23) admits, “I became inconsistent in solving DSA questions… it’s not a 100-metre sprint but a marathon”—and skipping daily practice early leads to a steep catch-up curve ([Medium][1]).
-        </Text>
-        <Text size="lg">
-          Industry-academia reports show that only 43 % of engineering grads secure jobs, largely because they lack foundational problem-solving habits (e.g., daily coding) ([India Today][2]).
-        </Text>
-        </div>
+            <Heading type="3" variations={["bold"]}>
+              1. No consistent DSA practice from Day 1
+            </Heading>
+            <Text size="lg">
+              Students who delay starting Data Structures & Algorithms until the pre-final year often find themselves overwhelmed later. As Chayan Sinha (Thapar ’23) admits, “I became inconsistent in solving DSA questions… it’s not a 100-metre sprint but a marathon”—and skipping daily practice early leads to a steep catch-up curve ([Medium][1]).
+            </Text>
+            <Text size="lg">
+              Industry-academia reports show that only 43 % of engineering grads secure jobs, largely because they lack foundational problem-solving habits (e.g., daily coding) ([India Today][2]).
+            </Text>
+          </div>
 
-        <Image src="/images/dsa.png"  width="400" className="pt-10 pb-10 lg:pt-0 lg:pb-0"/>
+          <Image src="/images/dsa.png" width="400" className="pt-10 pb-10 lg:pt-0 lg:pb-0" />
         </div>
         <Heading type="3" variations={["bold"]}>
           2. Neglecting hands-on projects and internships
@@ -107,32 +107,32 @@ export default function MongoDB() {
           <b>Maintain CGPA above the cutoff</b> to get your foot in the door—but <b>build a daily habit of DSA practice</b>, seek internships/projects early, and polish your communication and networking from Year 1. These combined habits are the strongest predictors of successful placement by the end of your fourth year.
         </Text>
         <Heading type="2">Refrences</Heading>
-        <div size="md">
+        <div className="w-full">
           <div className="flex flex-row gap-x-1">
             <Link height="30px" /> <Text size="md">[1]: https://medium.com/%40csinha134/a-roadmap-from-freshman-to-final-year-145b0e80cc5c "A Roadmap from freshman to final year… | by Chayan Sinha | Medium"</Text>
           </div>
-        </div> 
-        <div size="md">
+        </div>
+        <div className="w-full">
           <div className="flex flex-row gap-x-1">
             <Link height="30px" /> <Text size="md">[2]: https://www.indiatoday.in/education-today/featurephilia/story/engineering-graduates-struggle-can-colleges-fix-the-skills-gap-2695180-2025-03-18?utm_source=chatgpt.com "Engineering graduates struggle: Can colleges fix the skills gap?"</Text>
           </div>
         </div>
-        <div size="md">
-          <div className="flex flex-row gap-x-1 ">
-            <Link height="30px"/> <Text size="md">[3]: https://timesofindia.indiatimes.com/education/news/six-reasons-why-engineering-graduates-are-struggling-to-find-jobs/articleshow/112141827.cms?utm_source=chatgpt.com "Six Reasons Why Engineering Graduates Are Struggling to Find Jobs"</Text>
+        <div className="w-full">
+          <div className="flex flex-row gap-x-1">
+            <Link height="30px" /> <Text size="md">[3]: https://timesofindia.indiatimes.com/education/news/six-reasons-why-engineering-graduates-are-struggling-to-find-jobs/articleshow/112141827.cms?utm_source=chatgpt.com "Six Reasons Why Engineering Graduates Are Struggling to Find Jobs"</Text>
           </div>
         </div>
-        <div size="md">
+        <div className="w-full">
           <div className="flex flex-row gap-x-1">
             <Link height="30px" /> <Text size="md">[4]: https://timesofindia.indiatimes.com/education/news/pursuing-engineering-once-a-fad-now-a-dilemma-only-10-percent-of-15-lakh-graduates-likely-to-land-jobs-this-year/articleshow/114686084.cms?utm_source=chatgpt.com "Only 10 percent of 15 lakh graduates likely to land jobs this year"</Text>
           </div>
         </div>
-        <div size="md">
+        <div className="w-full">
           <div className="flex flex-row gap-x-1">
             <Link height="30px" /> <Text size="md">[5]: https://www.reddit.com/r/developersIndia/comments/11a0aii/how_important_is_cgpa_for_placements/?utm_source=chatgpt.com "How important is CGPA for placements? : r/developersIndia - Reddit"</Text>
           </div>
         </div>
-        <div size="md">
+        <div className="w-full">
           <div className="flex flex-row gap-x-1">
             <Link height="30px" /> <Text size="md">[6]: https://saharshsonu40.medium.com/hidden-secret-of-engg-campus-placements-no-one-speaks-about-3e6370dc218?utm_source=chatgpt.com "Hidden Secret of Engg Campus Placements no-one speaks about"</Text>
           </div>
