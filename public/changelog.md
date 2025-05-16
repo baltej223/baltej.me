@@ -1,10 +1,4 @@
-
-    <html>
-    <head>
-    <title>Change Log</title>
-    </head>
-    <body>
-    # ON 10-May-25
+# ON 10-May-25
 
 ```JSX
 diff --git a/app/aboutme/page.jsx b/app/aboutme/page.jsx
@@ -71,8 +65,3 @@ Changed right padding of React functional component "Content" from 40 and 65.
 
 Changed left and right padding of React functional component "Content" from 50 and 20 to 65 and 40.
 
-
-    <script src='https://baltej223.github.io/md_interpreter/main.js'></script>
-    </body>
-    </html>
-    

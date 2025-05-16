@@ -9,7 +9,7 @@ export function Content({ children, className = "", style }) {
     <>
       <div
         className={
-          "mer flex flex-wrap w-full lg:justify-start  lg:pl-65 lg:pr-65  text-xl " +
+          "mer content flex flex-wrap w-full lg:justify-start  lg:pl-65 lg:pr-65  text-xl " +
           className
         }
         style={style}

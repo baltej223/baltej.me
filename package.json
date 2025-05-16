@@ -3,15 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build && npm run gen-changelog",
-    "gen-changelog":"node ./scripts/post-build.mjs && echo 'If this command do not work then cd to root and rerun it.'", 
+    "dev": "npm run gen-changelog && next dev --turbopack",
+    "build": "next build",
+    "gen-changelog": "node ./scripts/post-build.mjs && echo 'If this command do not work then cd to root and rerun it.'",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "highlight.js": "^11.11.1",
     "lucide-react": "^0.482.0",
+    "markdown-it": "^14.1.0",
     "next": "15.2.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
