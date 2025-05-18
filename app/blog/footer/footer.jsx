@@ -14,8 +14,8 @@ export default function Footer() {
   return (
     <>
       <div className="h-[250px] flex flex-col justify-center w-full mt-20 bg-[var(--background-muted)] border-t-1 border-gray-400 dark:border-gray-600">
-        <Content className="flex w-[70%] flex-col h-full items-center justify-center md:flex-row w-auto gap-y-10 ">
-          <div className="md:w-[65%] h-auto">
+        <Content className="flex w-[70%] flex-col h-full items-center justify-around md:justify-between md:flex-row w-auto gap-y-10 md:pl-10 md:pr-10">
+          <div className="h-auto">
             baltej.me
             <Text size="sm" className="opacity-75">
               © {new Date().getFullYear()} baltej.me. All rights reserved.
