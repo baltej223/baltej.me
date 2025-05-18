@@ -1,8 +1,5 @@
 # ON 18-May-25
--
-```
-
-
+```JSX
 diff --git a/app/blog/footer/footer.jsx b/app/blog/footer/footer.jsx
 index d3af060..075f801 100644
 --- a/app/blog/footer/footer.jsx
@@ -33,6 +30,7 @@ index 16a3f44..ba9121c 100644
          style={style}
 (END)
 ```
+- Fixed footer social media icons, By tweaking flex properties. 
 
 
 ```JSX
