@@ -52,7 +52,7 @@ export function Text({
     .join(" ");
 
   return (
-    <p className={className + " " + appliedClasses + " mer"} style={styles}>
+    <p className={className + " " + appliedClasses + " mer wrap-break-word"} style={styles}>
       {children}
     </p>
   );

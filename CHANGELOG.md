@@ -1,3 +1,24 @@
+# ON 18-May-25
+```JSX
+diff --git a/blogsUI/blogUI.jsx b/blogsUI/blogUI.jsx
+index 62d47d6..16a3f44 100644
+--- a/blogsUI/blogUI.jsx
++++ b/blogsUI/blogUI.jsx
+@@ -52,7 +52,7 @@ export function Text({
+     .join(" ");
+ 
+   return (
+-    <p className={className + " " + appliedClasses + " mer"} style={styles}>
++    <p className={className + " " + appliedClasses + " mer wrap-break-word"} style={styles}>
+       {children}
+     </p>
+   );
+```
+- Added wrap-break-word, class to the React Functional component, Text, which will break the words to fit them in the designated content-width.
+
+# ON 16-May-25
+- Added a new blog, named utilizing-june-and-july at /blog/utilizing-june-and-july/
+
 # ON 10-May-25
 
 ```JSX
