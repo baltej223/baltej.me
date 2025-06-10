@@ -25,6 +25,9 @@ export default function Navbar(){
                     Contact Me
                 </a>
             </div>
+            <div>
+                <a href="https://posts.baltej.me/">Posts</a>
+            </div>
             <ThemeToggle/>
         </div>
     </div>

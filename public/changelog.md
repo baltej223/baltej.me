@@ -1,3 +1,23 @@
+# ON 10-June-25
+```JSX
+diff --git a/app/blog/navbar/navbar.jsx b/app/blog/navbar/navbar.jsx
+index 354a072..e4cc059 100644
+--- a/app/blog/navbar/navbar.jsx
++++ b/app/blog/navbar/navbar.jsx
+@@ -25,6 +25,9 @@ export default function Navbar(){
+                     Contact Me
+                 </a>
+             </div>
++            <div>
++                <a href="https://posts.baltej.me/">Posts</a>
++            </div>
+             <ThemeToggle/>
+         </div>
+     </div>
+(END)
+```
+- Added link for posts.baltej.me to improve SSO for posts.baltej.me
+
 # ON 18-May-25
 ```JSX
 diff --git a/app/blog/footer/footer.jsx b/app/blog/footer/footer.jsx
