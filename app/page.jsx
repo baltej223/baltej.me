@@ -1,7 +1,12 @@
 "use client";
 import Snowfall from 'react-snowfall'
 import Navbar from '@/app/blog/navbar/navbar';
+//import {redirect} from "next/navigation";
+import Home from "./aboutme/page.jsx"
+//redirect("./aboutme");
 
+
+/*
 export default function Home() {
     return (
         <>
@@ -18,3 +23,5 @@ export default function Home() {
       </>
     );
   }
+*/
+export default Home;

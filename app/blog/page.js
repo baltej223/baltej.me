@@ -7,7 +7,7 @@ import Footer from "@/app/blog/footer/footer";
 export default function Home() {
   return (
     <>
-    <Navbar/>
+    <Navbar title="baltej.blogs"/>
     {/* Here comes all the blogs */}
     <Content className="gap-x-20 gap-y-20">
       {/* <BlogCard src="https://cdn.pixabay.com/photo/2024/05/26/10/15/bird-8788491_1280.jpg" alt='some' href="./blog/junior-devs-cant-code">
