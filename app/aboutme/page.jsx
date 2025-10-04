@@ -4,7 +4,7 @@ import Navbar from "@/app/blog/navbar/navbar";
 import Footer from "@/app/blog/footer/footer";
 import Marquee from "react-fast-marquee";
 
-export default function Home(){
+export default function _Home(){
     return(
         <>
         <Navbar/>
