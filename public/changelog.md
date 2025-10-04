@@ -1,4 +1,9 @@
+# On Sep 28
+
+- Set Home component of ./aboutme route to render at index route.
+
 # ON 10-June-25
+
 ```JSX
 diff --git a/app/blog/navbar/navbar.jsx b/app/blog/navbar/navbar.jsx
 index 354a072..e4cc059 100644
@@ -16,9 +21,11 @@ index 354a072..e4cc059 100644
      </div>
 (END)
 ```
+
 - Added link for posts.baltej.me to improve SSO for posts.baltej.me
 
 # ON 18-May-25
+
 ```JSX
 diff --git a/app/blog/footer/footer.jsx b/app/blog/footer/footer.jsx
 index d3af060..075f801 100644
@@ -50,8 +57,8 @@ index 16a3f44..ba9121c 100644
          style={style}
 (END)
 ```
-- Fixed footer social media icons, By tweaking flex properties. 
 
+- Fixed footer social media icons, By tweaking flex properties.
 
 ```JSX
 diff --git a/blogsUI/blogUI.jsx b/blogsUI/blogUI.jsx
@@ -68,9 +75,11 @@ index 62d47d6..16a3f44 100644
      </p>
    );
 ```
+
 - Added wrap-break-word, class to the React Functional component, Text, which will break the words to fit them in the designated content-width.
 
 # ON 16-May-25
+
 - Added a new blog, named utilizing-june-and-july at /blog/utilizing-june-and-july/
 
 # ON 10-May-25
@@ -135,8 +144,6 @@ END
 
 Changed right padding of React functional component "Content" from 40 and 65.
 
-
 # ON 03-04-25
 
 Changed left and right padding of React functional component "Content" from 50 and 20 to 65 and 40.
-

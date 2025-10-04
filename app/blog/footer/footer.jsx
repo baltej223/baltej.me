@@ -20,12 +20,18 @@ export default function Footer() {
             <Text size="sm" className="opacity-75">
               © {new Date().getFullYear()} baltej.me. All rights reserved.
             </Text>
-            <div className="mt-4">
+            <div className="mt-4 flex flex-row gap-x-7">
               <a
                 href="https://github.com/baltej223#connect-with-me"
                 className="text-sm text-gray-400 hover:underline"
               >
                 Contact Me
+              </a>
+              <a
+                href="https://baltej.me/pubkey.html"
+                className="text-sm text-gray-400 hover:underline"
+              >
+                Public Key
               </a>
             </div>
           </div>
