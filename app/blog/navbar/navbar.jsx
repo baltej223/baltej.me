@@ -1,82 +1,73 @@
 "use client";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
-import { Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import { Menu } from "lucide-react";
 
-// A simple component for the navigation links.
-const NavLinks = ({ column = false, onClick }) => (
-  <div className={`flex items-center text-xl pl-0 ${column ? 'flex-col space-y-10' : 'flex-row space-x-10'} md:pr-5`} style={{fontFamily:"logo"}}>
-    <a href="/" onClick={onClick} className="hover:underline">Home</a>
-    <a href="/aboutme" onClick={onClick} className="hover:underline">About Me</a>
-    <a href="/github" onClick={onClick} className="hover:underline">Github</a>
-    <a href="/blog" onClick={onClick} className="hover:underline">Blogs</a>
-    <a href="https://github.com/baltej223#connect-with-me" onClick={onClick} className="hover:underline">Contact Me</a>
-    <a href="https://posts.baltej.me/" onClick={onClick} className="hover:underline">Posts</a>
-  </div>
-);
 
-export default function Navbar({ title = "baltej.me" }) {
-  const [isMobile, setIsMobile] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-
+export default function Navbar({title="baltej.me"}){
+  const [isOnPhone, setIsOnPhone] = useState(false);
+  
   useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768);
+    const checkIfMobile = () => {
+      setIsOnPhone(window.innerWidth <= 768); // Common breakpoint for mobile
     };
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
-    return () => window.removeEventListener("resize", checkScreenSize);
+    
+    checkIfMobile();
+    
+    window.addEventListener('resize', checkIfMobile);
+    
+    return () => window.removeEventListener('resize', checkIfMobile);
   }, []);
 
-  useEffect(() => {
-    if (menuOpen && isMobile) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
-  }, [menuOpen, isMobile]);
-
-  const closeMenu = () => setMenuOpen(false);
-
-  return (
+    return (
     <>
-      <div
-        className="z-[100] pt-10 pb-10 px-5 flex flex-row items-center sticky top-0 left-0 justify-center relative light:bg-[rgba(255, 255, 255, 0.6)]"
-        style={{ backdropFilter: "blur(10.5px)" }}
-      >
-        {/* Centered Title */}
-        <div className="text-3xl font-bold">
-          <a href="/">{title}</a>
+    <div className="z-[100] pt-10 pb-10 flex flex-row items-center sticky top-0 left-0 justify-center md:justify-between /*After this goes classes for glassmorphism*/ light:bg-[rgba(255, 255, 255, 0.6)]" style={{backdropFilter:"blur( 10.5px )", opacity:""}}>                                                                                                                                          {/* dark:bg-[rgba(0,0,0,0.35)] */}
+        <div className="pl-0  md:pl-20 text-3xl /*md:w-1/2*/ block font-bold" style={{fontFamily:"logo-bold"}}>
+            {title}
         </div>
-        
-        {/* Desktop Navigation (Positioned to the right) */}
-        <div className="hidden md:flex absolute right-5 items-center gap-x-10 pr-5" style={{ fontFamily: "logo" }}>
-          <NavLinks />
-          <ThemeToggle />
-        </div>
-
-        {/* Mobile Menu Button (Positioned to the right) */}
-        <div className="md:hidden absolute right-5">
-          <button onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu Panel */}
-      {isMobile && menuOpen && (
-        <div 
-          className="fixed inset-0 z-40 pt-24 p-5 flex flex-col items-center text-xl space-y-8
-            light:bg-white dark:bg-black mt-10"
-          style={{ fontFamily: "logo" }}
-        >
-          <NavLinks column={true} onClick={closeMenu} />
-          <ThemeToggle />
-        </div>
-      )}
+        { isOnPhone ?  <HamburgerMenu/> : <Navlinks/> }
+    </div>
     </>
+        );
+}
+
+const Navlinks = () =>{ 
+  return (
+  <>
+   <div style={{fontFamily:"logo"}} className="text-xl pl-0 flex flex-row gap-x-15 items-center hidden md:block md:flex lg:block lg:flex /*md:w-1/2*/ md:pr-20">
+            <div>
+                <a href="/">Home</a>
+            </div>
+            <div>
+                <a href="/aboutme">About Me</a>
+            </div>
+            <div>
+                <a href="/github">Github</a>
+            </div>
+            <div>
+                <a href="/blog">Blogs</a>
+            </div>
+            <div>
+                <a href="https://github.com/baltej223#connect-with-me">
+                    Contact Me
+                </a>
+            </div>
+            <div>
+                <a href="https://posts.baltej.me/">Posts</a>
+            </div>
+            <ThemeToggle/>
+        </div>
+  </>
+  );
+}
+
+const HamburgerMenu = () => {
+  let [isSheetOpen, setIsSheetOpen] = useState(false);
+  return (
+    <div className="fixed top-[50px] right-10 block">
+      <Menu onClick={()=>{
+        setIsSheetOpen(true);
+      }}/>
+    </div>
   );
 }
