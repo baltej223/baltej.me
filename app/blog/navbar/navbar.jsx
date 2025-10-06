@@ -85,9 +85,9 @@ const HamburgerMenu = () => {
 
     // Lock body scroll when sheet is open
     if (isSheetOpen) {
-      document.body.style.overflowX = "hidden"; 
+      // document.body.style.overflowX = "hidden"; 
     } else {
-      document.body.style.overflowX = "hidden";
+      // document.body.style.overflowX = "hidden";
     }
 
     return () => {

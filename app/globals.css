@@ -111,8 +111,8 @@ code{
 } */
 
 /* globals.css */
-/* html, body { */
-  /* overflow-x: hidden;   hide tiny horizontal overflow */
-  /* overflow-y: auto;     keep normal vertical scrolling */
-/* } */
+html, body {
+  overflow-x: hidden;   
+  /* hide tiny horizontal overflow */
+}
 
