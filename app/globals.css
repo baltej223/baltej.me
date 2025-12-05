@@ -111,8 +111,8 @@ code{
 } */
 
 /* globals.css */
-html, body {
-  overflow-x: hidden;   
+/* html, body { */
+  /* overflow-x: hidden;    */
   /* hide tiny horizontal overflow */
-}
+/* } */
 
