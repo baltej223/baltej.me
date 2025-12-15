@@ -1,5 +1,5 @@
 A Cute navbar
-Heading, 
+Heading,
 great readable font, and Heading Italic
 A blog viewer, A blog builder
 

@@ -67,7 +67,7 @@ index 62d47d6..16a3f44 100644
 +++ b/blogsUI/blogUI.jsx
 @@ -52,7 +52,7 @@ export function Text({
      .join(" ");
- 
+
    return (
 -    <p className={className + " " + appliedClasses + " mer"} style={styles}>
 +    <p className={className + " " + appliedClasses + " mer wrap-break-word"} style={styles}>

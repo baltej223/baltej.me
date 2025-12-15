@@ -4,8 +4,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --background-muted: hsl(0, 0%, 90%);
-  --footer-color:#e2e2e2;
-
+  --footer-color: #e2e2e2;
 }
 
 @theme inline {
@@ -27,13 +26,13 @@
 
 /* Dark system preference fallback */
 @media (prefers-color-scheme: dark) {
-  :root{
+  :root {
     --color-bg-rgb: 10 10 10;
     --color-text-rgb: 237 237 237;
     --background: #0a0a0a;
     --foreground: #ededed;
     --background-muted: hsl(0, 0%, 15%);
-    --footer-color: #0E0E0E;
+    --footer-color: #0e0e0e;
   }
 }
 
@@ -70,7 +69,6 @@ body {
   src: url("../public/Merriweather/static/Merriweather_24pt-Regular.ttf");
 }
 
-
 /* *{
   font-family: logo;
 } */
@@ -79,29 +77,28 @@ body {
   font-family: Merriweather;
 } */
 
-.mer{
+.mer {
   font-family: Merriweather;
 }
 
-a{
+a {
   font-family: logo;
 }
 
-.cooking{
+.cooking {
   font-family: monospace !important;
 }
 
-.monospace{
+.monospace {
   font-family: monospace !important;
 }
 
-code{
+code {
   padding: 0 !important;
 }
 
-.height-cooking-something{
-  height:  calc(100svh - (2 * (var(--spacing) * 10)) - 3rem);
-  ;
+.height-cooking-something {
+  height: calc(100svh - (2 * (var(--spacing) * 10)) - 3rem);
 }
 
 /* @layer base {
@@ -112,7 +109,6 @@ code{
 
 /* globals.css */
 /* html, body { */
-  /* overflow-x: hidden;    */
-  /* hide tiny horizontal overflow */
+/* overflow-x: hidden;    */
+/* hide tiny horizontal overflow */
 /* } */
-

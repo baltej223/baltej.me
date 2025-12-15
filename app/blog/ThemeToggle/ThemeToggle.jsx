@@ -11,7 +11,9 @@ export default function ThemeToggle() {
     if (saved) {
       applyTheme(saved);
     } else {
-      const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const systemDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
       applyTheme(systemDark ? "dark" : "light");
     }
 
@@ -42,19 +44,34 @@ export default function ThemeToggle() {
     if (newTheme === "dark") {
       document.documentElement.style.setProperty("--background", "#0a0a0a");
       document.documentElement.style.setProperty("--foreground", "#ededed");
-      document.documentElement.style.setProperty("--background-muted", "hsl(0,0%,15%)");
+      document.documentElement.style.setProperty(
+        "--background-muted",
+        "hsl(0,0%,15%)",
+      );
       document.documentElement.style.setProperty("--footer-color", "#0E0E0E");
       document.documentElement.style.setProperty("--color-bg-rgb", "10 10 10");
-      document.documentElement.style.setProperty("--color-text-rgb", "237 237 237");
+      document.documentElement.style.setProperty(
+        "--color-text-rgb",
+        "237 237 237",
+      );
       document.documentElement.classList.add("dark");
       document.documentElement.setAttribute("data-theme", "dark");
     } else {
       document.documentElement.style.setProperty("--background", "#ffffff");
       document.documentElement.style.setProperty("--foreground", "#171717");
-      document.documentElement.style.setProperty("--background-muted", "hsl(0,0%,90%)");
+      document.documentElement.style.setProperty(
+        "--background-muted",
+        "hsl(0,0%,90%)",
+      );
       document.documentElement.style.setProperty("--footer-color", "#e2e2e2");
-      document.documentElement.style.setProperty("--color-bg-rgb", "255 255 255");
-      document.documentElement.style.setProperty("--color-text-rgb", "23 23 23");
+      document.documentElement.style.setProperty(
+        "--color-bg-rgb",
+        "255 255 255",
+      );
+      document.documentElement.style.setProperty(
+        "--color-text-rgb",
+        "23 23 23",
+      );
       document.documentElement.classList.remove("dark");
       document.documentElement.setAttribute("data-theme", "light");
     }
