@@ -11,7 +11,7 @@ export default function _Home() {
       <Content className="flex-col gap-y-10">
         <div className="flex lg:flex-row flex-col-reverse flex-col width:[40%]">
           <div className="flex flex-col gap-y-10 lg:w-2/3 w-[3/4] pl-[10%] pr-[10%] lg:p-0 pt-10 lg:pt-0">
-            <Heading type="1">Hi, I am Baltej Singh.</Heading>
+            <Heading type="1" className="pt-7">Hi, I am Baltej Singh.</Heading>
             <Text size="xl" variations={["italic"]}>
               A passionate Fullstack Developer from India, Currently pursuing CS
               in Thapar Institute, Patiala, India, With over 4+ years of
@@ -73,7 +73,7 @@ export default function _Home() {
           <div className="flex justify-center items-center block">
             <Image
               src="https://avatars.githubusercontent.com/u/73211864?v=4"
-              className="rounded-4xl ml-[10%] mr-[10%] md:m-0"
+              className="rounded-4xl ml-[10%] mr-[10%] md:m-0 object-cover"
             />
           </div>
         </div>
