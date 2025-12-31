@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function NowPlaying() {
+  return <></>;
   const [song, setSong] = useState(null);
 
   useEffect(() => {
@@ -11,7 +12,7 @@ export default function NowPlaying() {
     };
 
     fetchSong();
-    const id = setInterval(fetchSong, 25000);
+    const id = setInterval(fetchSong, 10000);
     return () => clearInterval(id);
   }, []);
 
@@ -23,7 +24,7 @@ export default function NowPlaying() {
         flex items-center gap-6
         px-6 py-5
         rounded-2xl
-        bg-white/10 backdrop-blur-md
+        backdrop-blur-md
         border border-white/20
         max-w-md
       "
@@ -53,14 +54,14 @@ export default function NowPlaying() {
 
         {/* Waveform */}
         <div className="flex items-end gap-[4px] mt-4 h-6">
-        {Array.from({ length: 22 }).map((_, i) => {
+        {Array.from({ length: 15 }).map((_, i) => {
           const height = 12 + Math.random() * 18;   // 12–30px
           const duration = 0.9 + Math.random() * 0.8; // 0.9–1.7s
 
           return (
             <span
               key={i}
-              className="w-[3px] bg-[#1DB954] rounded-sm animate-wave-random"
+              className="w-[6px] bg-[#1DB954] animate-wave-random"
               style={{
                 "--max-h": `${height}px`,
                 "--dur": `${duration}s`,

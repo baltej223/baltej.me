@@ -10,6 +10,10 @@ import {
   FaGithub,
 } from "react-icons/fa";
 
+// Playing Now import:
+import NowPlaying from "@/components/NowPlaying.jsx";
+
+
 export default function Footer() {
   return (
     <>
@@ -35,6 +39,9 @@ export default function Footer() {
               </a>
             </div>
           </div>
+            <div className="for_now_playing flex justify-center items-center w-auto">
+                <NowPlaying/>
+            </div>
           <div className="w-max h-auto">
             <div className="flex space-x-6">
               {/* Instagram */}

@@ -87,7 +87,7 @@ export default function _Home() {
         </div>
 
         <div className="test w-full flex justify-center items-center">
-            <NowPlaying/>
+            {/* <NowPlaying/> */}
         </div>
       </Content>
       <Footer />
