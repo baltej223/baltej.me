@@ -4,6 +4,8 @@ import Navbar from "@/app/blog/navbar/navbar";
 import Footer from "@/app/blog/footer/footer";
 import Marquee from "react-fast-marquee";
 
+import NowPlaying from "@/components/NowPlaying.jsx"
+
 export default function _Home() {
   return (
     <>
@@ -17,6 +19,7 @@ export default function _Home() {
               in Thapar Institute, Patiala, India, With over 4+ years of
               experience.
             </Text>
+            
             <div>
               <ul className="flex flex-col gap-y-5">
                 <li>
@@ -81,6 +84,10 @@ export default function _Home() {
 
         <div className="flex justify-center">
           <img src="https://raw.githubusercontent.com/baltej223/baltej223/refs/heads/output/snake.svg" type="svg"/>
+        </div>
+
+        <div className="test w-full flex justify-center items-center">
+            <NowPlaying/>
         </div>
       </Content>
       <Footer />
@@ -231,8 +238,3 @@ function Marquee_local() {
     </>
   );
 }
-
-function Spotify() {
-  return <></>;
-}
-
