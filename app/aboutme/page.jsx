@@ -3,7 +3,7 @@ import { Content, Heading, Text, Image } from "@/blogsUI/blogUI";
 import Navbar from "@/app/blog/navbar/navbar";
 import Footer from "@/app/blog/footer/footer";
 import Marquee from "react-fast-marquee";
-import BlurText from "../../components/ShinyText.jsx";
+import BlurText from "../../components/BlurText.jsx";
 
 import NowPlaying from "@/components/NowPlaying.jsx"
 
