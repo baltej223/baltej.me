@@ -3,51 +3,61 @@ import { Content, Heading, Text, Image } from "@/blogsUI/blogUI";
 import Navbar from "@/app/blog/navbar/navbar";
 import Footer from "@/app/blog/footer/footer";
 import Marquee from "react-fast-marquee";
+import BlurText from "../../components/ShinyText.jsx";
 
 import NowPlaying from "@/components/NowPlaying.jsx"
 
 export default function _Home() {
+  const handleAnimationComplete = () => {
+  };
   return (
     <>
       <Navbar />
       <Content className="flex-col gap-y-10">
         <div className="flex lg:flex-row flex-col-reverse flex-col width:[40%]">
-          <div className="flex flex-col gap-y-10 lg:w-2/3 w-[3/4] pl-[10%] pr-[10%] lg:p-0 pt-10 lg:pt-0">
-            <Heading type="1" className="pt-7">Hi, I am Baltej Singh.</Heading>
-            <Text size="xl" variations={["italic"]}>
-              A passionate Fullstack Developer from India, Currently pursuing CS
-              in Thapar Institute, Patiala, India, With over 4+ years of
-              experience.
+          <div className="flex flex-col gap-y-7 lg:w-2/3 w-[3/4] pl-[10%] pr-[10%] lg:p-0 pt-10 lg:pt-0">
+            {/* <Heading type="1" className="pt-7">Hi, I am Baltej Singh.</Heading> */}
+            <Heading type="1" className="pt-7" >
+              <BlurText
+                text="Hi, I am Baltej Singh."
+                delay={200}
+                animateBy="words"
+                direction="top"
+                onAnimationComplete={handleAnimationComplete}
+                className="text-4xl  font-bold"
+              />
+            </Heading>
+            <Text size="xl" className="pr-10" variations={["italic"]}>
+              Computer Science student at Thapar Institute, building full-stack systems with a focus on scalability and performance.
             </Text>
-            
+
             <div>
               <ul className="flex flex-col gap-y-5">
+                {/* <li> */}
+                {/*   <Text size="sm"> */}
+                {/*     • Currently pursuing Computer Science at Thapar Institute Patiala. */}
+                {/*   </Text> */}
+                {/* </li> */}
+                {/**/}
                 <li>
-                  <Text size="sm">
-                    • Curretly, I am pursuing CSE at Thapar Institute, Patiala
+                  <Text size="sm" className="pr-10">
+                    • I focus on writing clean code, understanding systems deeply, and shipping real-world solutions.
                   </Text>
                 </li>
 
                 <li>
                   <Text size="sm">
-                    • I’m interested in actual coding [not chatgpt guided
-                    coding], coding challenges, coding projects and networking
+                    •  I’m currently learning DevOps, AI/ML, Cybersecurity and WebDev.
                   </Text>
                 </li>
 
                 <li>
                   <Text size="sm">
-                    • I’m currently learning DevOps, AI/ML, Cybersecurity and
-                    WebDev
+                    •   Ask me about React, Next, JS, python, web developement, Aurdino.
                   </Text>
                 </li>
 
-                <li>
-                  <Text size="sm">
-                    • Ask me about React, Next, JS, python, web developement,
-                    Aurdino
-                  </Text>
-                </li>
+
 
                 <li>
                   <Text size="sm">• Connect with me : </Text>
@@ -83,11 +93,11 @@ export default function _Home() {
         <Marquee_local />
 
         <div className="flex justify-center">
-          <img src="https://raw.githubusercontent.com/baltej223/baltej223/refs/heads/output/snake.svg" type="svg"/>
+          <img src="https://raw.githubusercontent.com/baltej223/baltej223/refs/heads/output/snake.svg" type="svg" />
         </div>
 
         <div className="test w-full flex justify-center items-center">
-            {/* <NowPlaying/> */}
+          {/* <NowPlaying/> */}
         </div>
       </Content>
       <Footer />
