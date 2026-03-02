@@ -41,7 +41,7 @@ export default function NowPlaying() {
       <div className="flex-1 min-w-0">
         {/* Label */}
         <div className="text-xs uppercase tracking-wide text-white/50 mb-1">
-          Currently listening to <br/>{song.title} on Spotify
+          Currently listening to <br />{song.title} on Spotify
         </div>
 
         <div className="text-lg pt-1 text-white font-semibold truncate">
@@ -54,23 +54,23 @@ export default function NowPlaying() {
 
         {/* Waveform */}
         <div className="flex items-end gap-[4px] mt-4 h-6">
-        {Array.from({ length: 15 }).map((_, i) => {
-          const height = 12 + Math.random() * 18;   // 12–30px
-          const duration = 0.9 + Math.random() * 0.8; // 0.9–1.7s
+          {Array.from({ length: 15 }).map((_, i) => {
+            const height = 12 + Math.random() * 18;   // 12–30px
+            const duration = 0.9 + Math.random() * 0.8; // 0.9–1.7s
 
-          return (
-            <span
-              key={i}
-              className="w-[6px] bg-[#1DB954] animate-wave-random"
-              style={{
-                "--max-h": `${height}px`,
-                "--dur": `${duration}s`,
-                animationDelay: `${i * 0.06}s`,
-              }}
-            />
-          );
-        })}
-      </div>
+            return (
+              <span
+                key={i}
+                className="w-[6px] bg-[#1DB954] animate-wave-random"
+                style={{
+                  "--max-h": `${height}px`,
+                  "--dur": `${duration}s`,
+                  animationDelay: `${i * 0.06}s`,
+                }}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );
