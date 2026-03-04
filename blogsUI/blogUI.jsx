@@ -94,16 +94,19 @@ export function Heading({ type, variations = [], children, style, className }) {
   );
 }
 
-export function BlogCard({ src, alt, children, href, className }) {
+export function BlogCard({ src, alt, children, href, className = "" }) {
+  {
+    /*max-w-[850px] border border-zinc-300*/
+  }
   return (
     <>
       <div
-        className={`max-w-[450px] pb-5 md:pb-0 md:h-[450px] border border-zinc-300 pointer ${className}`}
+        className={`flex md:flex-row flex-col items-center justify-around border border-zinc-300  w-[80%] pb-5 md:pb-0 md:h-[250px]  pointer ${className}`}
         onClick={() => {
           window.location.href = href;
         }}
       >
-        <div className="image w-full flex justify-center">
+        <div className="image w-auto flex justify-center">
           <img src={src} alt={alt} />
         </div>
         <div className="flex flex-col gap-x-3">{children}</div>
@@ -111,14 +114,17 @@ export function BlogCard({ src, alt, children, href, className }) {
     </>
   );
 }
-export function BlogCardTitle({ minsread, children }) {
+export function BlogCardTitle({ minsread, children, publishDate = "" }) {
   return (
     <>
-      <div className="pl-5 pt-3 flex gap-x-5 items-center justify-between">
+      <div className="pl-5 pt-3 flex flex-col  gap-x-5 gap-y-3 items-center justify-between">
+        <div className="w-5/6 hidden md:block flex flex-row gap-x-3 items-center  justify-start">
+          <span className="opacity-25  text-sm pr-5">{publishDate}</span>
+          <span className="opacity-25  text-sm pr-5">{minsread} read</span>
+        </div>
         <Heading type="3" className="w-5/6">
           {children}
         </Heading>
-        <span className="opacity-25 text-sm pr-5">{minsread} read</span>
       </div>
     </>
   );
@@ -126,7 +132,7 @@ export function BlogCardTitle({ minsread, children }) {
 export function BlogCardDesc({ children }) {
   return (
     <>
-      <div className="pt-3 pl-7 text-base opacity-70">{children}</div>
+      <div className="pt-3 pl-15 text-base opacity-70">{children}</div>
     </>
   );
 }
@@ -134,7 +140,7 @@ export function BlogCardDesc({ children }) {
 export function BlogAuthor({ children }) {
   return (
     <>
-      <div className="flex justify-end text-sm opacity-70 pr-3">
+      <div className="flex justify-end w-[90%] text-sm opacity-70 pr-3">
         <Text variations={["italic"]}>- {children}</Text>
       </div>
     </>
@@ -318,4 +324,13 @@ export function _Date({ date }) {
       </>
     );
   }
+}
+
+export function MainPageFlex({ children }) {
+  //https://chatgpt.com/share/69a7d9c7-d318-800e-8e79-6b838925fe7e
+  return (
+    <div className="min-h-screen flex flex-col">
+      {children}
+    </div>
+  );
 }
