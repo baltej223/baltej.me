@@ -27,7 +27,7 @@ export default function JuniorDevs() {
         <Code lang="Javascript">
           {`document.getElementById("t");
                 If I had to copy it
-                `}
+          `}
         </Code>
       </Content>
     </>
