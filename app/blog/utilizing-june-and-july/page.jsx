@@ -1,5 +1,5 @@
 import { Content, _Date, Image } from "@/blogsUI/blogUI";
-import Navbar from "@/app/blog/navbar/navbar";
+import Navbar from "@/app/navbar/navbar";
 import { Heading, Text } from "@/blogsUI/blogUI";
 import Footer from "@/app/footer/footer";
 import { Link } from "lucide-react";
