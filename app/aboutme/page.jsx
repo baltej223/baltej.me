@@ -1,7 +1,7 @@
 "use client";
 import { Content, Heading, Text, Image } from "@/blogsUI/blogUI";
-import Navbar from "@/app/blog/navbar/navbar";
-import Footer from "@/app/blog/footer/footer";
+import Navbar from "@/app/navbar/navbar";
+import Footer from "@/app/footer/footer.jsx";
 import Marquee from "react-fast-marquee";
 import BlurText from "../../components/BlurText.jsx";
 

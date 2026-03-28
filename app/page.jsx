@@ -1,6 +1,6 @@
 "use client";
 // import Snowfall from "react-snowfall";
-import Navbar from "@/app/blog/navbar/navbar";
+import Navbar from "@/app/navbar/navbar";
 //import {redirect} from "next/navigation";
 import Home from "./aboutme/page.jsx";
 //redirect("./aboutme");

@@ -1,7 +1,7 @@
 import { Code, Content, Section, _Date } from "@/blogsUI/blogUI";
-import Navbar from "@/app/blog/navbar/navbar";
+import Navbar from "@/app/navbar/navbar";
 import { Heading, Text, Image } from "@/blogsUI/blogUI";
-import Footer from "@/app/blog/footer/footer";
+import Footer from "@/app/footer/footer";
 
 export default function MongoDB() {
   return (

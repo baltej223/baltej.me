@@ -1,5 +1,5 @@
 import { Code, Content, Section } from "@/blogsUI/blogUI";
-import Navbar from "@/app/blog/navbar/navbar";
+import Navbar from "@/app/navbar/navbar";
 import { Heading, Text, Image } from "@/blogsUI/blogUI";
 export default function JuniorDevs() {
   return (

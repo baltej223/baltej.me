@@ -1,13 +1,13 @@
 "use client";
 import { Content, MainPageFlex } from "@/blogsUI/blogUI";
-import Navbar from "./navbar/navbar";
+import Navbar from "@/app/navbar/navbar";
 import {
   BlogCard,
   BlogCardDesc,
   BlogCardTitle,
   BlogAuthor,
 } from "@/blogsUI/blogUI";
-import Footer from "@/app/blog/footer/footer";
+import Footer from "@/app/footer/footer";
 
 export default function Home() {
   return (

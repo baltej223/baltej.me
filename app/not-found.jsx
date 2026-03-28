@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import Footer from "./blog/footer/footer";
-import Navbar from "./blog/navbar/navbar";
+import Footer from "./footer/footer";
+import Navbar from "@/app/navbar/navbar.jsx";
 import FallingText from "@/components/falling";
 
 export default function Error() {

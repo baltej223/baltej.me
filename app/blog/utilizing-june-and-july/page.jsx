@@ -1,7 +1,7 @@
 import { Content, _Date, Image } from "@/blogsUI/blogUI";
 import Navbar from "@/app/blog/navbar/navbar";
 import { Heading, Text } from "@/blogsUI/blogUI";
-import Footer from "@/app/blog/footer/footer";
+import Footer from "@/app/footer/footer";
 import { Link } from "lucide-react";
 
 export default function MongoDB() {
